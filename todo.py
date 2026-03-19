@@ -9,8 +9,11 @@ while True:
     t = input("Nouvelle tâche : ")
     taches.append(t)
   elif action == "v":
-    for i in range(0, len(taches)):
-      print(f"{taches[i]}")
+    if len(taches) == 0:
+        print("Liste a tache vide")
+    else:
+      for i, tache in enumerate(taches):
+        print(f"({i}) {tache}")
   elif action == "x": 
     tache = int(input("position: "))
     if tache >= 0 and tache < len(taches):
