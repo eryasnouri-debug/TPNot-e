@@ -1,0 +1,3 @@
+with open("tasks.txt", "w+) as f: 
+  for tache in taches:
+    f.write(tache "\n")
