@@ -12,6 +12,9 @@ while True:
     for i in range(0, len(taches)):
       print(f"{taches[i]}")
   elif action == "e":
+    with open("tasks.txt", "w+") as f: 
+     for tache in taches:
+       f.write(tache + "\n")
     print("Action non-implémentée")
   elif action == "q":
     break
