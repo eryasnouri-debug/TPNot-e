@@ -3,7 +3,7 @@ taches = []
 print("Bienvenue dans votre gestionnaire de tâches !")
 
 while True:
-  action = input("Ajouter (a) / Voir (v) / Enregistrer (e) / Quitter (q): ")
+  action = input("Ajouter (a) / Voir (v) / Enregistrer (e) / Supprimer (x) / Quitter (q): ")
 
   if action == "a":
     t = input("Nouvelle tâche : ")
@@ -11,6 +11,10 @@ while True:
   elif action == "v":
     for i in range(0, len(taches)):
       print(f"{taches[i]}")
+  elif action == "x": 
+    tache = int(input("position: "))
+    if tache >= 0 and tache < len(taches):
+      taches.pop(tache)
   elif action == "e":
     with open("tasks.txt", "w+") as f: 
      for tache in taches:
